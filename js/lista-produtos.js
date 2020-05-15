@@ -192,7 +192,7 @@ renderTable(prodList);
 function buscar() {
 
 var input, filter, table, tr, td, i, txtValue;
-input = document.getElementById("myInput");
+input = document.getElementById("busca");
 filter = input.value.toUpperCase();
 table = document.getElementById("prodTabela");
 tr = table.getElementsByTagName("tr");
