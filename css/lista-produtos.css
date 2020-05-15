@@ -1,0 +1,106 @@
+body{
+  font-family: 'Lato', sans-serif;
+}
+
+fieldset{
+  display: flex;
+  border-radius: 8px;
+  margin-top: 30px;
+  border: 1px solid #999;
+}
+input{
+  background: #ebebeb;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: 1.2em;
+  box-sizing: border-box;
+}
+label{
+  padding: 4px 8px;
+  display: inline-block;
+}
+.container{
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.form-container{
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid #ccc;
+  padding: 6px 10px 16px;
+  border-radius: 8px;
+  margin-bottom: 40px;
+}
+
+.form-legend{
+  flex: 1 1 100%;
+  margin-bottom: 10px;
+}
+
+.input-field{
+  flex: 1;
+  padding: 0 10px;
+}
+
+.input-field input, .input-field button{
+  width: 100%;
+}
+
+.input-field button{
+  border: none;
+  margin-top: 27px;
+  background: red;
+  padding: 8px;
+  font-size: 1.1em;
+  background: #2196f3;
+  transition: 0.2s;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.input-field button:hover{
+  background: #1565c0;
+}
+
+.table-container{
+  overflow-x:auto;
+}
+table {
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+  margin-top: 80px;
+
+}
+
+th{
+  cursor: pointer;
+}
+
+th, td {
+  text-align: left;
+  padding: 16px;
+}
+
+tr td:nth-child(2), tr th:nth-child(2) {
+  text-align: left;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2
+}
+
+td input{
+  text-align: center;
+  max-width: 120px;
+}
+
+@media screen and (max-width: 480px){
+  .input-field{
+    flex: 1 1 50%;
+  }
+}

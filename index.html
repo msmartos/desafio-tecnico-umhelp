@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link type="text/css" rel="stylesheet" href="css/lista-produtos.css"/>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Lista de Produtod</title>
+</head>
+<body>
+  <div class="container">
+
+    <div class="form-container">
+        <div class="form-legend">Buscar Produtos</div>
+        <div class="input-field">
+          <input type="text" id="busca" onkeyup="buscar()" placeholder="Digite parte do nome do produto">
+        </div>
+    </div>
+
+    <div class="form-container">
+        <div class="form-legend">Adicionar Novo Produto</div>
+        <div class="input-field">
+          <label for="prodNome">Nome</label>
+          <input id="prodNome" type="text"/>
+        </div>
+        <div class="input-field">
+          <label for="prodEstoque">Estoque</label>
+          <input id="prodEstoque" type="text"/>
+        </div>
+        <div class="input-field">
+          <label for="prodValor">Valor</label>
+          <input id="prodValor" type="text"/>
+        </div>
+        <div class="input-field">
+          <button id="prodAdd" type="button">Adicionar</button>
+        </div>
+    </div>
+
+    <div class="table-container">
+      <table id="prodTabela">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Estoque</th>
+            <th>Valor Unitário</th>
+            <th>Valor Total</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="js/lista-produtos.js"></script>
+</body>
+</html>
