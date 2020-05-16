@@ -24,8 +24,8 @@ document.querySelector('#prodAdd').addEventListener('click', function(){
   }
 
   var nome = document.querySelector('#prodNome').value;
-  var estoque = parseFloat(document.querySelector('#prodEstoque').value);
-  var valorU = parseFloat(document.querySelector('#prodValor').value);
+  var estoque = parseFloat(document.querySelector('#prodEstoque').value.replace(",", "."));
+  var valorU = parseFloat(document.querySelector('#prodValor').value.replace(",", "."));
   valorU = valorU.toFixed(2);
   var valorT = estoque * valorU;
   valorT = valorT.toFixed(2);
@@ -220,7 +220,7 @@ function inputNumeros(evt) {
       var key = evento.keyCode || evento.which;
       key = String.fromCharCode(key);
   }
-  var regex = /[0-9]|\./;
+  var regex = /[0-9]|\.|\,/;
   if( !regex.test(key) ) {
     evento.returnValue = false;
     if(evento.preventDefault) evento.preventDefault();
