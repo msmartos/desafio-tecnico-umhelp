@@ -76,6 +76,7 @@ function adicionarColuna(conteudo, atributo){
     var input = document.createElement("input");
     input.setAttribute('value', conteudo);
     input.setAttribute('onchange', 'atualizarEstoque(this)');
+    input.setAttribute('onkeypress', 'inputNumeros(event)');
     coluna.appendChild(input);
   }
 }
@@ -191,21 +192,37 @@ renderTable(prodList);
 //buscar produtos
 function buscar() {
 
-var input, filter, table, tr, td, i, txtValue;
-input = document.getElementById("busca");
-filter = input.value.toUpperCase();
-table = document.getElementById("prodTabela");
-tr = table.getElementsByTagName("tr");
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("busca");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("prodTabela");
+  tr = table.getElementsByTagName("tr");
 
-for (i = 0; i < tr.length; i++) {
-  td = tr[i].getElementsByTagName("td")[1];
-  if (td) {
-    txtValue = td.textContent || td.innerText;
-    if (txtValue.toUpperCase().indexOf(filter) > -1) {
-      tr[i].style.display = "";
-    } else {
-      tr[i].style.display = "none";
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[1];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
     }
   }
 }
+
+//digitar somente números
+function inputNumeros(evt) {
+  var evento = evt || window.event;
+  if (evento.type === 'paste') {
+      key = event.clipboardData.getData('text/plain');
+  } else {
+      var key = evento.keyCode || evento.which;
+      key = String.fromCharCode(key);
+  }
+  var regex = /[0-9]|\./;
+  if( !regex.test(key) ) {
+    evento.returnValue = false;
+    if(evento.preventDefault) evento.preventDefault();
+  }
 }
